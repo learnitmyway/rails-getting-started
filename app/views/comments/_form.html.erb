@@ -2,6 +2,11 @@
   <p>
     <%= form.label :commenter %><br>
     <%= form.text_field :commenter %>
+    <% if comment %>
+      <% comment.errors.full_messages_for(:commenter).each do |message| %>
+        <div><%= message %></div>
+      <% end %>
+    <% end %>
   </p>
   <p>
     <%= form.label :body %><br>
